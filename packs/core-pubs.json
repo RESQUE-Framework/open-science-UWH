@@ -439,7 +439,7 @@
         {
             "id": "P_Data",
             "type": "radio",
-            "title": "Does this paper use any kind of data in a substantive way (new data, reuse of existing data, or simulated data?)",
+            "title": "Does this paper use any kind of data (new data, reuse of existing data, or simulated data?)",
             "options": [
                 {
                     "id": "No",
@@ -1355,7 +1355,7 @@
         {
             "id": "P_Preregistration_Replication",
             "type": "radio",
-            "title": "The paper contains a preregistered replication attempt of a existing study (either direct/close or conceptual).",
+            "title": "The paper contains a preregistered replication attempt of a existing study (either a direct/close or conceptual replication of any study in this or another paper).",
             "score": {
                 "not_applicable": "($P_Suitable === 'No') || (($P_Preregistration_Replication === 'NotApplicable') && (exists($P_Preregistration_Replication_NAExplanation))) || ($P_TypeMethod_MetaAnalysis)",
                 "condition": ""
@@ -1714,7 +1714,7 @@
             "id": "P_GeneralComments",
             "type": "textbox",
             "maxwords": 500,
-            "title": "(optional) General comments (max. 500 words)",
+            "title": "(optional) General comments",
             "optional": true
         }
     ]
