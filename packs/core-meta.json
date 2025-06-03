@@ -17,7 +17,7 @@
         {
             "id": "YearPhD",
             "type": "number",
-            "title": "Year of PhD / Dr."
+            "title": "Year of PhD / Dr. (leave empty if not yet obtained)"
         },
         {
             "id": "AcademicAgeBonus",

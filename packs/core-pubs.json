@@ -216,7 +216,7 @@
             ],
             "condition": "$P_Suitable === 'Yes'",
             "info": "{:'Yes' | In multi-study papers, sometimes the studies have very different properties (e.g., one is preregistered but the others are not). Therefore, in multi-study papers you need to select <i>one specific study</i> which then is rated.<br><br>If you want to include multiple studies from a single multi-study paper, they need to be entered in multiple slots of the rating scheme (as separate publications). In this case, the ratings for all items which are on the paper level (and not on the study level) might be repeated, such as the formal modeling of a theory.}",
-            "tip_external": "As external rater, you should select the sub-study that (presumably) gains the highest rigor score. Strictly speaking this would require to first score all studies; but for practical reasons we suggest that you skim all studies, select the most promising, and rate that one in the scoring sheet"
+            "tip_external": "As external rater, you should select the sub-study that (presumably) gains the highest rigor score. Strictly speaking this would require to first score all studies; but for practical reasons we suggest that you skim all studies, select the most promising, and rate that in the scoring sheet."
         },
         {
             "id": "P_MultiStudy_Selected",
@@ -501,7 +501,7 @@
                 },
                 {
                     "id": "MostlyStudents",
-                    "text": "(Predominantly) students, interdisciplinary"
+                    "text": "(Predominantly) university students, interdisciplinary"
                 },
                 {
                     "id": "General",
@@ -509,7 +509,7 @@
                 },
                 {
                     "id": "Specific",
-                    "text": "Specific target population (e.g., working nurses; common psychiatric disorders)"
+                    "text": "Specific target population (e.g., working nurses; common psychiatric disorders; pupils)"
                 },
                 {
                     "id": "Rare",
@@ -532,8 +532,8 @@
         {
             "id": "P_Sample_RareOther",
             "type": "text",
-            "title": "⤷ Why was the population hard to acquire?",
-            "condition": "$P_Suitable === 'Yes' && $P_Data === 'Yes' && ($P_Data_Source_NewOwn || $P_Data_Source_ReuseOwn || $P_Data_Source_ReuseOther || $P_Data_Source_ReuseCompilation) && ($P_TypeMethod_EmpiricalQuantitative || $P_TypeMethod_EmpiricalQualitative) && $P_Sample == 'Rare'"
+            "title": "⤷ Describe the specific target population. Why was it hard to acquire?",
+            "condition": "$P_Suitable === 'Yes' && $P_Data === 'Yes' && ($P_Data_Source_NewOwn || $P_Data_Source_ReuseOwn || $P_Data_Source_ReuseOther || $P_Data_Source_ReuseCompilation) && ($P_TypeMethod_EmpiricalQuantitative || $P_TypeMethod_EmpiricalQualitative) && ($P_Sample =|= ['Specific', 'Rare'])"
         },
 
 
@@ -771,7 +771,7 @@
             "options": [
                 {
                     "id": "QuestionnaireSelfreport",
-                    "text": "Questionnaire (self report), including self-reported behavioral intentions"
+                    "text": "Questionnaire (self report), including self-reported behavioral intentions and retrospective behavior"
                 },
                 {
                     "id": "QuestionnaireOtherreport",
@@ -779,7 +779,7 @@
                 },
                 {
                     "id": "Behavioral",
-                    "text": "Behavioral data (give details below)"
+                    "text": "Behavioral data (actual behavior including reaction times; give details below)"
                 },
                 {
                     "id": "Physiological",
@@ -1064,13 +1064,13 @@
                 },
                 {
                     "id": "StructuredOpenFormat",
-                    "text": "The data set is stored in a structured, open format (e.g., .csv, .tsv, .tab, .txt, .json; not .sav, .xlsx, .pdf)",
+                    "text": "The data set is stored in a structured, open format (e.g., .csv, .tsv, .tab, .txt, .json, .xlsx; <b>not</b> .sav, .pdf)",
                     "value": 0.25
                 }
             ],
             "condition": "($P_Suitable === 'Yes') && ($P_Data === 'Yes') && ($P_Data_Source_NewOwn || $P_Data_Source_ReuseCompilation || $P_Data_Source_ReuseOwn || $P_Data_Source_Simulated) && $P_Data_Open =|= ['YesEntire', 'YesParts', 'YesSynthetic', 'YesAggregate'] && (($P_Data_Open_AccessLevel =|= ['ZK0', 'ZK1']) || ($P_Data_Open_AccessLevel === 'ZK2' && exists($P_Data_Open_AccessLevel_ZK2Explanation)))",
-            "info": "<ul><li>Persistent identifier: Data in an OSF project do count, as we consider OSF URLs to be persistent.</li></ul>",
-            "tip_external":"For <b>Codebook</b>:<ul><li>Check the availability of a codebook. Normally a separate document should be provided.</li><li>Exception: Variable labels, descriptions and scales are provided in a structured (e.g. tabular) format at the beginning of the syntax script.</li><li><b>Variable name, content</b> and <b>scale</b> must be provided in order to receive the point.</li></ul>"
+            "info": "<ul><li><b>Persistent identifier</b>: Data in an OSF project do count, as we consider OSF URLs to be persistent.</li><li><b>Codebook</b>: Variable name, a clear description, and typically the scale (e.g., the response scale or the range of possible values) must be provided in order to receive the point. If the scale of the variable is evident (e.g., for 'Number of cigarettes smoked today'), it is not necessary to provide it explicitly in the codebook.</li></ul>",
+            "tip_external":"For <b>Codebook</b>:<ul><li>Check the availability of a codebook. Normally a separate document should be provided.</li><li>Exception: Variable labels, descriptions and scales are provided in a structured (e.g. tabular) format at the beginning of the syntax script.</li></ul>"
         },
         {
             "id": "P_sep_before_reproducibility",
@@ -1108,7 +1108,7 @@
                     "value": 1
                 }
             ],
-            "info":"{'YesEntire', 'YesParts', 'YesSynthetic', 'YesAggregate' | Only choose <b>`Yes`</b> if a doi or URL can be provided.} <br><br><b>When only parts of scripts available:</b><br>Choose `Yes, parts of scripts` if no justification is given.<br>Choose `Yes, entire scripts` if a reasonable justification for all missing scripts are provided.<br><br> When to choose <b>'Not applicable'</b>:<br>If no scripts have been used in the publication.",
+            "info":"Reproducible scripts can (and should) be provided, even if the data itself cannot be provided.<br><br>{'YesEntire', 'YesParts', 'YesSynthetic', 'YesAggregate' | Only choose <b>`Yes`</b> if a doi or URL can be provided.} <br><br><b>When only parts of scripts available:</b><br>Choose `Yes, parts of scripts` if no justification is given.<br>Choose `Yes, entire scripts` if a reasonable justification for all missing scripts are provided.<br><br> When to choose <b>'Not applicable'</b>:<br>If no scripts have been used in the publication.",
             "condition": "$P_Suitable === 'Yes' && $P_Data == 'Yes'"
         },
         {
