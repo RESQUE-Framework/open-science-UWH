@@ -104,8 +104,6 @@
 
             const c = insertValuesIntoCondition(preprocessCondition(condition))
 
-            console.log('Evaluating condition:', c);
-
             return eval(c);
         }
 
@@ -1529,6 +1527,7 @@
                 ...checkboxIds,
                 ...tabularRadioIds,
                 ...(filteredElements.map(e => e.id + '_Comment')),
+                'Title', 'Year', 'Abstract',
                 'date_added', 'position', 'type', 'version'
             ];
 
