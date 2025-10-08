@@ -33,7 +33,7 @@ meta:
 
 pubs:
   sources: ["packs/core-pubs.json"]
-  exclude: ["P_CRediT_Info", "P_CRediT_InJournal", "P_CRediT", "P8P9bSEP", "P_TopPaper", "P_Stimuli", "P_Sample_RepresentativenessRelevance", "P_Sample_Representative", "P_Sample_Representative_Details", "P_MultiStudy_Note2", "P_Power_Info", "P_PowerConsiderations", "P_SampleSize", "P_MeritStatement_Info", "P_MeritStatement", "P_ImpactStatement_Info", "P_ImpactStatement", "P_Theorizing", "P17P18SEP", "P19P20SEP", "P22P23SEP", "P23P24SEP"]
+  exclude: ["P_CRediT_Info", "P_CRediT_InJournal", "P_CRediT", "P8P9bSEP", "P_TopPaper", "P_Stimuli", "P_Sample_RepresentativenessRelevance", "P_Sample_Representative", "P_Sample_Representative_Details", "P_MultiStudy_Note2", "P_Power_Info", "P_PowerConsiderations", "P_SampleSize", "P_MeritStatement_Info", "P_MeritStatement", "P_ImpactStatement_Info", "P_ImpactStatement", "P_Theorizing", "P17P18SEP", "P19P20SEP", "P22P23SEP", "P23P24SEP", "stimsep", "sep_before_data_open"]
   config:
     min_indicators_warning_threshold: 0
 
